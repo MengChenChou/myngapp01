@@ -38,6 +38,21 @@ import { IndexComponent } from './index/index.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UserCenterComponent } from './user-center/user-center.component'
+import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+//聲明路由詞典--路由地址和路由組件的對應集合
+type PathMatch = "full" | "prefix" | undefined;
+let route = [
+  // {path:'',component:IndexComponent},
+  {path: '',redirectTo: 'index', pathMatch:'full' as PathMatch},
+  {path:'index',component:IndexComponent},
+  {path:'plist',component:ProductListComponent},
+  {path:'pdetail',component:ProductDetailComponent},
+  {path:'ucenter',component:UserCenterComponent},
+    // 任意無註冊 404頁面 要放最後
+    {path:'**', component: NotFoundComponent},
+]
 
 @NgModule({
   declarations: [  //宣告
@@ -74,13 +89,15 @@ import { UserCenterComponent } from './user-center/user-center.component'
     IndexComponent,
     ProductListComponent,
     ProductDetailComponent,
-    UserCenterComponent
+    UserCenterComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,//瀏覽器模塊 包含CommonModule(ngif...)
     AppRoutingModule,
     FormsModule,//ngmodel---重點導入08
     HttpClientModule,
+    RouterModule.forRoot(route),// 導入路由模塊，並註冊路由詞典，用於根模塊中
   ],
   providers: [],
   bootstrap: [AppComponent]
