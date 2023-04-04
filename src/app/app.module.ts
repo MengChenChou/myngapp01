@@ -48,10 +48,10 @@ let route = [
   {path: '',redirectTo: 'index', pathMatch:'full' as PathMatch},
   {path:'index',component:IndexComponent},
   {path:'plist',component:ProductListComponent},
-  {path:'pdetail',component:ProductDetailComponent},
+  {path:'pdetail/:lid',component:ProductDetailComponent},
   {path:'ucenter',component:UserCenterComponent},
-    // 任意無註冊 404頁面 要放最後
-    {path:'**', component: NotFoundComponent},
+  // 任意無註冊 404頁面 要放最後
+  {path:'**', component: NotFoundComponent},
 ]
 
 @NgModule({
