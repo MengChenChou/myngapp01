@@ -1,0 +1,19 @@
+<br>
+<p>myc13-productlist works!</p>
+<table border="1">
+    <tbody>
+        <tr *ngIf="productList.length==0">
+            <td colspan="5">暫時沒有數據</td>
+        </tr>
+        <tr *ngFor="let p of productList">
+            <td>{{p.lid}}</td>
+            <td>{{p.title}}</td>
+            <td>{{p.pic}}</td>
+            <td>{{p.price}}</td>
+            <td>
+                <button>刪除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="loadMore()">加載下一頁數據</button>

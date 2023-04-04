@@ -1,0 +1,8 @@
+<p>myc04-ngifelse works!</p>
+<div *ngIf="age>=18; else forChildren">
+    此處是成年看
+</div>
+<ng-template #forChildren>
+    <p>此處是未成年看</p>
+</ng-template>
+<br>

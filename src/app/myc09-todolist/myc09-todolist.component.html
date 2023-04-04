@@ -1,0 +1,13 @@
+<br>
+<p>myc09-todolist works!</p>
+<h3>代辦事項列表</h3>
+<hr>
+<input [(ngModel)]="userInput" placeholder="請輸入...">
+<button (click)="doAdd()">添加事項</button>
+<p *ngIf="todoList.length==0">尚無代辦事項</p>   
+<ul>
+    <li *ngFor="let item of todoList; let i = index;">
+        {{i+1}}-{{item}}
+        <button (click)="doDelete(i)">刪除</button>
+    </li>
+</ul>

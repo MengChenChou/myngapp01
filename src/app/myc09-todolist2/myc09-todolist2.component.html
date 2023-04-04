@@ -1,0 +1,22 @@
+<br>
+<p>myc09-todolist2 works!</p>
+<h3>員工列表</h3>
+<hr>
+<table border="1" width="100%">
+    <tbody>
+        <tr *ngIf="empList.length==0">
+            <td colspan="7">沒有員工了</td>
+        </tr>
+        <tr *ngFor="let item of empList; let i = index">
+            <td>{{item.eid}}</td>
+            <td>{{item.ename}}</td>
+            <td>{{item.salary}}</td>
+            <td>{{item.birthday}}</td>
+            <td>{{item.sex}}</td>
+            <td>{{item.zzmm}}</td>
+            <td>
+                <button (click)="doDelete(i)">刪除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,12 @@
+<br>
+<p>myc14-parent-blog works! 父組件</p>
+<div #c0 style="background: #bf3; padding: 15px;">
+    <h2>{{userName}}的博客</h2>
+    <hr>
+    <!-- 子組件1 (cryEvent)="doCry($event)"攜帶數據的自訂義事件-->
+    <app-myc15-child1-modify #c1 (cryEvent)="doCry($event)"></app-myc15-child1-modify>
+    <br>
+    <!-- 子組件2 -->
+    <app-myc16-child2-photo #c2 [child2Name]="userName"></app-myc16-child2-photo>
+    <button (click)="print()">輸出內部有識別符的子組件</button>
+</div>

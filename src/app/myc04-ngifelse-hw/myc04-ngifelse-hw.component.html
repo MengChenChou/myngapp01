@@ -1,0 +1,12 @@
+<br>
+<p>myc04-ngifelse-hw works!</p>
+<button [ngStyle]="testobj" *ngIf="hasMore; else hasMoreElse" (click)="loadMore()">加載更多</button>
+<ng-template #hasMoreElse>
+    <hr>
+    <p>你已經到數據底線了</p>
+</ng-template>
+<br>
+<button [ngStyle]="testobj2" (click)="test1()">按鈕變色</button>
+<br>
+<button [ngClass]="myClassObj" (click)="test2()">按鈕變色2</button>
+<br>
